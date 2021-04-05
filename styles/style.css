@@ -37,7 +37,8 @@ input {
 }
 
 input:checked + img {
-    border: solid 2px green;
+    box-shadow: 3px 3px 3px 3px limegreen;
+    cursor: pointer;
 }
 
 button {
