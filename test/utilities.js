@@ -1,5 +1,5 @@
-import pokemon from '../pokemon.js';
-
+import pokemon from '../data.js';
+import { getDex, setDex } from '../local-storage/storage.utilities.js';
 const POKEDEX = 'POKEDEX';
 
 export function findById(array, id) {
@@ -11,10 +11,14 @@ export function findByName(name) {
     return pokemon.find(poke => name === poke.pokemon);
 }
 
+
+
+
+
 export function encounterPokemon(pokemon) {
     const dex = getDex();
     const matchingPoke = findById(pokemon);
-    if(matchingPoke) {
+    if (matchingPoke) {
         matchingPoke.encountered++;
     } else {
         const newDexEntry = {
@@ -22,13 +26,25 @@ export function encounterPokemon(pokemon) {
             capture: 0,
             encountered: 1
         };
-        PC.push(newDexEntry);
+        dex.push(newDexEntry);
     }
     setDex(dex);
     return dex;
 }
 
 export function capturePokemon() {
-
-
+    const dex = getDex(dex);
+    const pokeMatch = findById(pokemon);
+    if (pokeMatch) {
+        pokeMatch.encountered++;
+    } else {
+        const newDexEntry = {
+            id: pokemon.pokemon,
+            captured: 0,
+            encountered: 1
+        };
+        dex.push(newDexEntry);
+    }
+    setDex(dex);
+    return dex;
 }

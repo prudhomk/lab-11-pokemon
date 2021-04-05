@@ -32,6 +32,14 @@ div {
    
 }
 
+input {
+    display: none;
+}
+
+input:checked + img {
+    border: solid 2px green;
+}
+
 button {
     margin: 20px;
 }
