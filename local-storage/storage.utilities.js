@@ -1,7 +1,7 @@
 const POKEDEX = 'POKEDEX';
 
 export function getDex() {
-    const stringyDex = localStorage.getItem('POKEDEX');
+    const stringyDex = localStorage.getItem(POKEDEX);
     if (!stringyDex) return [];
 
     const parsedDex = JSON.parse(stringyDex);
