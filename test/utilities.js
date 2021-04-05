@@ -7,13 +7,9 @@ export function findById(array, id) {
 }
 
 
-export function findByName(name) {
+export function findByPokemon(name) {
     return pokemon.find(poke => name === poke.pokemon);
 }
-
-
-
-
 
 export function encounterPokemon(pokemon) {
     const dex = getDex();
@@ -34,17 +30,23 @@ export function encounterPokemon(pokemon) {
 
 export function capturePokemon() {
     const dex = getDex(dex);
-    const pokeMatch = findById(pokemon);
-    if (pokeMatch) {
-        pokeMatch.encountered++;
-    } else {
-        const newDexEntry = {
-            id: pokemon.pokemon,
-            captured: 0,
-            encountered: 1
-        };
-        dex.push(newDexEntry);
+}
+
+export function generatePokemon() {
+    let randomNum1 = Math.floor(Math.random() * pokemon.length);
+    let randomNum2 = Math.floor(Math.random() * pokemon.length);
+    let randomNum3 = Math.floor(Math.random() * pokemon.length);
+
+    while (randomNum1 === randomNum2 || randomNum2 === randomNum3 || randomNum1 === randomNum3) {
+        let randomNum1 = Math.floor(Math.random() * pokemon.length);
+        let randomNum2 = Math.floor(Math.random() * pokemon.length);
+        let randomNum3 = Math.floor(Math.random() * pokemon.length);
     }
-    setDex(dex);
-    return dex;
+    const firstPoke = pokemon[randomNum1];
+    encounterPokemon(firstPoke);
+    const secondPoke = pokemon[randomNum2];
+    encounterPokemon(secondPoke);
+    const thirdPoke = pokemon[randomNum3];
+    encounterPokemon(thirdPoke);
+    return [firstPoke, secondPoke, thirdPoke];
 }
