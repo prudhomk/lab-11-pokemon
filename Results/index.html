@@ -15,18 +15,21 @@
 <body>
    
     <main>
-        <section>
+        <section class="results">
             <h1>You Ran out of Pokeballs!</h1>
             <table>
                 <thead>
                     <th>Pokemon</th>
-                    <th># Encountered</th>
-                    <th># Captured</th>
+                    <th>Encountered</th>
+                    <th>Captured</th>
                 </thead>
             </table>
-            <button id="reset">Play Again?</button>
-        </section>
             
+        </section>
+        <button id="reset">Play Again?</button>
+        <audio controls autoplay>
+            <source src="../assets/Pokémon Red & Blue Music Trainer Victory Theme - YouTube.mp3" type="audio/mp3">
+        </audio>
     </main>
   
     <script type="module" src="./results.js"></script>
