@@ -3,6 +3,7 @@ import { capturePokemon } from './test/utilities.js';
 import { generatePokemon, findByPokemon } from './pokemon.js';
 
 
+
 const spot1 = document.querySelector('#spot1');
 const spot2 = document.querySelector('#spot2');
 const spot3 = document.querySelector('#spot3');
@@ -12,6 +13,8 @@ const label2 = document.querySelector('#label2');
 const label3 = document.querySelector('#label3');
 
 const button = document.getElementById('button');
+
+
 
 function pokemonBattle() {
     const wildGrass = generatePokemon();
@@ -33,14 +36,19 @@ function pokemonBattle() {
 pokemonBattle();
 
 
-
+let pokeballs = 0;
 button.addEventListener('click', () => {
-    
-    const selectedPoke = document.querySelector('input:checked');
-    const dexEntry = findByPokemon(selectedPoke.value);
-    capturePokemon(dexEntry);
-    pokemonBattle();
+    pokeballs++;
+    if (pokeballs === 10) {
+        window.location = '../results/index.html';
+    } else {
+        const selectedPoke = document.querySelector('input:checked');
+        const dexEntry = findByPokemon(selectedPoke.value);
+        capturePokemon(dexEntry);
+        pokemonBattle();
+    }
 });
+    
 
 
 

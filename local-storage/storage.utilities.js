@@ -1,5 +1,12 @@
 const POKEDEX = 'POKEDEX';
 
+
+
+
+
+
+
+
 export function getDex() {
     const stringyDex = localStorage.getItem(POKEDEX);
     if (!stringyDex) return [];
