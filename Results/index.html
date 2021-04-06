@@ -15,15 +15,21 @@
 <body>
    
     <main>
-        <div>
+        <section>
             <h1>You Ran out of Pokeballs!</h1>
-            <p>You caught <span id="caught"></span> pokemon and saw <span id="encountered"></span> pokemon!</p>
+            <table>
+                <thead>
+                    <th>Pokemon</th>
+                    <th># Encountered</th>
+                    <th># Captured</th>
+                </thead>
+            </table>
             <button id="reset">Play Again?</button>
-        </div>
+        </section>
             
     </main>
   
-    <script type="module" src="../app.js"></script>
+    <script type="module" src="./results.js"></script>
 </body>
 
 </html>

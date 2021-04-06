@@ -1,13 +1,19 @@
-import { getDex } from '../local-storage/storage.utilities.js';
+import { getDex, createTableRow } from '../local-storage/storage.utilities.js';
+const resultsTable = document.querySelector('table');
+
+const dex = getDex();
+
+for (let dexObject of dex) {
+    console.log(dexObject);
+
+    const resultsData = createTableRow(dexObject);
+    
+    resultsTable.append(resultsData);
+}
 
 
 
-const captureRate = document.getElementById('caught');
-const wildPokemon = document.getElementById('encountered');
 const resetButton = document.getElementById('reset');
-
-captureRate.textContent = (getDex().captured);
-wildPokemon.textContent = (getDex().encountered);
 
 
 resetButton.addEventListener('click', () => {
