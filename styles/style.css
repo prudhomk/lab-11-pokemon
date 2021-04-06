@@ -50,6 +50,12 @@ image {
     size: 30px;
 }
 
+h1 {
+    display: flex;
+    color: red;
+    align-items: center;
+    size: 40px;
+}
 
 button {
     margin: 20px;
@@ -67,6 +73,7 @@ table {
 thead {
     text-align: center;
 }
+
 td {
     border: solid;
     border-width: 2px;
@@ -91,21 +98,47 @@ audio{
     align-items: center;
 }
   
-  @keyframes pulse {
-    20% {
-      transform: rotate3d(-10, -10, -10, 50deg) scale(1.2);
-    }
-
-    40% {
-        transform: rotate3d(10, 10, -10, 50deg) scale(1);
-    }
-
-    60% {
-        transform: rotate3d(-10, 10, 10, 50deg) scale(1.2);
-      }
-
-    80% {
-        transform: rotate3d(10, 10, 10, 50deg) scale(1);
-    }
-
+@font-face {
+    font-family: "Pokemon GB";
+    src: url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.eot?") format("eot"),
+         url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.woff") format("woff"),
+         url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.ttf") format("truetype"),
+         url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.svg#PokemonGB") format("svg");
+    font-weight: normal;
+    font-style: normal;
   }
+  
+  .box {
+    font-size: 20px;
+    font-family: "Pokemon GB", Arial, sans-serif;
+    border-radius: 2px;
+    padding: 8px;
+    width: 400px;
+    height: 100px;
+    line-height: 16px;
+    margin: auto;
+    background: white;
+    border: 1px solid white;
+    box-shadow: 0 1px 0 1px black,
+                inset 0 1px 0 1px black,
+                0 0 0 1px black,
+                inset 0 0 0 1px black;
+  }
+
+  .box > i {
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-color: black;
+    margin-top: 23px;
+    animation: bounce 0.5s ease-in-out 0 infinite alternate;
+    float: right;
+  }
+  
+  @keyframes bounce {
+    from { margin-top: 20px; }
+    to { margin-top: 23px; }
+  }
+  
+  
+  

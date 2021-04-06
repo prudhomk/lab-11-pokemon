@@ -15,14 +15,14 @@ const label3 = document.querySelector('#label3');
 
 const button = document.getElementById('button');
 
-
+//export let appearedPoke = [];
 
 
 function pokemonBattle() {
     const wildGrass = generatePokemon();
+    //appearedPoke = wildGrass.slice();
     const img1 = document.querySelector('#img1');
     img1.src = wildGrass[0].url_image;
-    console.log(img1);
     spot1.value = wildGrass[0].pokemon;
     label1.append(img1);
 
@@ -37,6 +37,7 @@ function pokemonBattle() {
     label3.append(img3);
 }
 pokemonBattle();
+
 
 
 let pokeballs = 0;
