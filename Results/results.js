@@ -3,13 +3,13 @@ const resultsTable = document.querySelector('table');
 
 const dex = getDex();
 
-//for (let dexObject of dex) {
-//    console.log(dexObject);
-//
-//    const resultsData = createTableRow(dexObject);
-//    
-//    resultsTable.append(resultsData);
-//}
+for (let dexObject of dex) {
+    console.log(dexObject);
+
+    const resultsData = createTableRow(dexObject);
+    
+    resultsTable.append(resultsData);
+}
 
 
 const resetButton = document.getElementById('reset');
@@ -26,6 +26,7 @@ resetButton.addEventListener('click', () => {
 const names = [];
 const captures = [];
 const encounters = [];
+
 
 for (let pokemon of dex) {
     names.push(pokemon.id);
@@ -62,3 +63,27 @@ var myChart = new Chart(ctx, { //eslint-disable-line
         }
     }
 });
+
+
+let ctx1 = document.getElementById('pieChart').getContext('2d');
+let pieChart = new Chart(ctx1, { //eslint-disable-line
+    type: 'pie',
+    data: {
+        labels: names,
+        datasets: [{
+            label: 'Pokemon Captured',
+            data: captures,
+            backgroundColor: 'red',
+            borderColor: 'black'
+        },
+        {
+            label: 'Pokemon Encountered',
+            data: encounters,
+            backgroundColor: 'white',
+            borderColor: 'black'  
+        }]
+    },
+    hoverOffset: 4
+});
+
+
