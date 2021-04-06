@@ -19,6 +19,6 @@ const resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', () => {
 
     localStorage.clear();
-    window.location = '/Users/kalanprudhomme/alchemy/lab-11-pokemon/index.html';
+    window.location = '../../index.html';
 
 });
