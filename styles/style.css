@@ -98,16 +98,7 @@ audio{
     align-items: center;
 }
   
-@font-face {
-    font-family: "Pokemon GB";
-    src: url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.eot?") format("eot"),
-         url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.woff") format("woff"),
-         url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.ttf") format("truetype"),
-         url("https://dl.dropboxusercontent.com/u/10822923/Pokemon_GB/Pokemon_GB.svg#PokemonGB") format("svg");
-    font-weight: normal;
-    font-style: normal;
-  }
-  
+
   .box {
     font-size: 20px;
     font-family: "Pokemon GB", Arial, sans-serif;
