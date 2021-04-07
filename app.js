@@ -44,7 +44,7 @@ let pokeballs = 0;
 button.addEventListener('click', () => {
     pokeballs++;
     if (pokeballs === 10) {
-        window.location = '../results/result.html';
+        window.location = './results/result.html';
     } else {
         const selectedPoke = document.querySelector('input:checked');
         const dexEntry = findByPokemon(selectedPoke.value);
