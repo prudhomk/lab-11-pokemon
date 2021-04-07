@@ -1,4 +1,7 @@
 import { getDex, createTableRow } from '../local-storage/storage.utilities.js';
+import { findById } from '../test/utilities.js';
+import pokemon from '../data.js';
+
 const resultsTable = document.querySelector('table');
 
 const dex = getDex();
@@ -26,12 +29,21 @@ resetButton.addEventListener('click', () => {
 const names = [];
 const captures = [];
 const encounters = [];
+const type1 = [];
+const type2 = [];
 
+for (let poke of pokemon) {
+    const matchingPoke = findById(pokemon, poke.id);
+    console.log(matchingPoke.type_1);
+    type1.push(matchingPoke.type_1);
+    type2.push(matchingPoke.type_2);
+}
 
 for (let pokemon of dex) {
     names.push(pokemon.id);
     captures.push(pokemon.captured);
     encounters.push(pokemon.encountered);
+
 }
 
 var ctx = document.getElementById('myChart').getContext('2d');
@@ -71,15 +83,15 @@ let pieChart = new Chart(ctx1, { //eslint-disable-line
     data: {
         labels: names,
         datasets: [{
-            label: 'Pokemon Captured',
-            data: captures,
+            label: 'Pokemon Primary Type',
+            data: type1,
             backgroundColor: 'red',
             borderColor: 'black'
         },
         {
-            label: 'Pokemon Encountered',
-            data: encounters,
-            backgroundColor: 'white',
+            label: 'Pokemon Secondary Type',
+            data: type2,
+            backgroundColor: 'blue',
             borderColor: 'black'  
         }]
     },
