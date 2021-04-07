@@ -16,8 +16,7 @@ body {
     background-repeat: no-repeat;
     background-image: repeat none;
     background-size: cover;
-   
-}
+}    
 
 main {
     display: flex;
@@ -43,8 +42,9 @@ input {
 
 input:checked + img {
     box-shadow: 3px 3px 3px 3px rgb(219, 240, 111);
-    cursor: pointer;
-}
+    cursor: url('../assets/pokeball.jpg'), auto;
+};
+
 
 image {
     size: 30px;
