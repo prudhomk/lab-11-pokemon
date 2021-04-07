@@ -83,15 +83,15 @@ let pieChart = new Chart(ctx1, { //eslint-disable-line
     data: {
         labels: names,
         datasets: [{
-            label: 'Pokemon Primary Type',
-            data: type1,
+            label: 'Pokemon Encountered',
+            data: encounters,
             backgroundColor: 'red',
             borderColor: 'black'
         },
         {
-            label: 'Pokemon Secondary Type',
-            data: type2,
-            backgroundColor: 'blue',
+            label: 'Pokemon Caught',
+            data: captures,
+            backgroundColor: 'white',
             borderColor: 'black'  
         }]
     },
