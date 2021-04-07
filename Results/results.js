@@ -7,7 +7,7 @@ const resultsTable = document.querySelector('table');
 const dex = getDex();
 
 for (let dexObject of dex) {
-    console.log(dexObject);
+    
 
     const resultsData = createTableRow(dexObject);
     
@@ -34,7 +34,7 @@ const type2 = [];
 
 for (let poke of pokemon) {
     const matchingPoke = findById(pokemon, poke.id);
-    console.log(matchingPoke.type_1);
+    
     type1.push(matchingPoke.type_1);
     type2.push(matchingPoke.type_2);
 }
